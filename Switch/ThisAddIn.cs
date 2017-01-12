@@ -33,7 +33,7 @@ namespace TreeViewer
 
         void Application_WorkbookActivate(Excel.Workbook wb) {
             Debug.Print("Activate {0}", wb.Name);
-            var pane = PaneManager.GetPane("Navigator", () => new TreeViewer());
+            var pane = PaneManager.GetPane("Switch", () => new TreeViewer());
             pane.Visible = true;
             var tree = pane.Control as TreeViewer;
             tree.UpdateTreeView();
@@ -42,7 +42,7 @@ namespace TreeViewer
         void Application_WorksheetUpdate(Excel.Workbook wb, object obj) {
             var sheet = obj as Excel.Worksheet;
             Debug.Print("Activate {0}", sheet.Name);
-            var pane = PaneManager.GetPane("Navigator", () => new TreeViewer());
+            var pane = PaneManager.GetPane("Switch", () => new TreeViewer());
             pane.Visible = true;
             var tree = pane.Control as TreeViewer;
             tree.UpdateTreeView();
